@@ -40,7 +40,7 @@ class MyHttpRequestHandler(http.server.SimpleHTTPRequestHandler):
 
 # Create an object of the above class
 handler_object = MyHttpRequestHandler
-my_server = socketserver.TCPServer(("", PORT), handler_object)
+my_server = socketserver.ThreadingTCPServer(("", PORT), handler_object)
 
 # Star the server
 my_server.serve_forever()
